@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { CgPassword } from "react-icons/cg";
-import { LogInUser, signupUser } from "../../api/authService";
+import { signupUser } from "../../api/authService";
 import { errorToast, successToast } from "../../utils/toastConfig";
 
 const SignUpForm = ({ setMode }) => {
@@ -45,6 +44,7 @@ const SignUpForm = ({ setMode }) => {
         confirmPassword: "",
       });
     } catch (error) {
+      console.log(error);
       errorToast(error);
     } finally {
       setLoading(false);

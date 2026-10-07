@@ -19,15 +19,12 @@ export const successToast = (message, position = "top-center") => {
 };
 
 export const errorToast = (error, position = "top-center") => {
-  toast.error(
-    error?.response?.data?.message || error?.message || "Something went wrong",
-    {
-      icon: "⚠️",
-      position: position,
-      style: {
-        ...toastStyle,
-        boxShadow: "0 5px 32px rgba(250,250,250,0.30)",
-      },
+  toast.error(error?.response?.data?.message || error || "An error occurred", {
+    icon: "⚠️",
+    position: position,
+    style: {
+      ...toastStyle,
+      boxShadow: "0 5px 32px rgba(250,250,250,0.30)",
     },
-  );
+  });
 };
